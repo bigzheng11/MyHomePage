@@ -10,7 +10,7 @@ type Result<T> = {
 
 class Request {
     instance: AxiosInstance;
-    baseConfig: AxiosRequestConfig = {baseURL: '/api', timeout: 1000 * 5}
+    baseConfig: AxiosRequestConfig = {baseURL: 'http://124.70.41.92:8081', timeout: 1000 * 5}
 
     constructor(config: AxiosRequestConfig) {
         this.instance = axios.create(Object.assign(this.baseConfig, config))
