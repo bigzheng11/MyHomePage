@@ -52,10 +52,12 @@
 
     </div>
   </div>
+  <button @click="test">测试一下</button>
 </template>
 
 <script lang="ts">
 import {defineComponent, reactive, ref} from 'vue';
+import {api_user_list} from "@/api/request/user";
 
 export default defineComponent({
   setup() {
@@ -86,7 +88,16 @@ export default defineComponent({
     const toSelect = (args: number) => {
       window.open(url[args - 1])
     }
-    return {value_input, value_select, onSearch, toSelect}
+
+
+
+    const test=()=>{
+      api_user_list().then((res)=>{
+        console.log(res)
+      })
+    }
+
+    return {value_input, value_select, onSearch, toSelect,test}
   }
 });
 </script>
